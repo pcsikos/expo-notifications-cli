@@ -8,6 +8,14 @@
 
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+import * as Notifications from "expo-notifications";
+
+Notifications.getDevicePushTokenAsync()
+.then((pushToken) => {
+  console.log("pushtoken", pushToken);
+})
+.catch((err) => console.warn("getDevicePushTokenAsync", err));
+
 
 export default function App() {
   return (
